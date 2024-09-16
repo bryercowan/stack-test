@@ -33,13 +33,6 @@ export const metadata: Metadata = {
 icons: {
 		icon: '/blue-stack-test.png'
 	},
-  twitter: {
-    card: 'summary_large_image',
-    site: '@yourcompany',
-    title: 'Expert Stack Testing Services',
-    description: 'We provide emissions testing and compliance services for industrial facilities.',
-    image: '/stack-test.png',
-  },
 };
 
 export default function RootLayout({
