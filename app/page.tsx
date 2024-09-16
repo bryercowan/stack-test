@@ -25,20 +25,28 @@ export default function StackTestGroup() {
 
   return (
     <div className="flex flex-col min-h-screen bg-sky-50">
-      <header className="bg-sky-600 text-white">
-        <div className="container mx-auto px-4 py-6">
+     <header  className="bg-sky-600 text-white"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(28, 169, 232, 1) 30%, rgba(28, 169, 232, 0) 70%), url('/smoke-stack-flipped.webp')",
+          backgroundSize: '100% 100%',
+          backgroundPosition: 'right center',
+          backgroundRepeat: 'no-repeat',
+	height: '50vh',
+        }}>
+        <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
-            <Image src="/stack-test.png" alt="Stack Test" width={100} height={100} />
+            <Image src="/stack-test.png" alt="Stack Test" width={80} height={100} />
             <ul className="flex space-x-4">
               <li><a href="#about" className="hover:underline">About</a></li>
               <li><a href="#services" className="hover:underline">Services</a></li>
               <li><a href="#contact" className="hover:underline">Contact</a></li>
             </ul>
           </nav>
-          <div className="mt-16 mb-20 text-center">
-            <h2 className="text-4xl font-bold mb-4">Expert Stack Testing Services</h2>
-            <p className="text-xl">Ensuring compliance and optimizing performance for your industrial stacks</p>
-          </div>
+        </div>
+	 <div className="container mx-auto text-center relative z-10">
+          <h2 className="text-4xl font-bold mb-4">Expert Stack Testing Services</h2>
+          <p className="text-xl">Ensuring compliance and optimizing performance for your industrial stacks</p>
         </div>
       </header>
 
