@@ -14,8 +14,32 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Smoke Test Group",
-  description: "Smoke Test Group",
+  title: 'Expert Stack Testing Services | Stack Test Group',
+  description: 'Leading provider of stack testing services for industrial facilities. Over 50 years of experience in emissions compliance and performance optimization.',
+  keywords: 'stack testing, emissions testing, environmental compliance, air quality, combustion testing, permit compliance, air toxic studies, emissions optimization',
+  author: 'Stack Test Group',
+  openGraph: {
+    title: 'Expert Stack Testing Services',
+    description: 'We provide emissions testing and compliance services for industrial facilities.',
+    url: 'https://www.yoursite.com',
+    type: 'website',
+    images: [
+      {
+        url: '/stack-test.png',
+        alt: 'Stack Test Group Logo',
+      },
+    ],
+  },
+icons: {
+		icon: '/blue-stack-test.png'
+	},
+  twitter: {
+    card: 'summary_large_image',
+    site: '@yourcompany',
+    title: 'Expert Stack Testing Services',
+    description: 'We provide emissions testing and compliance services for industrial facilities.',
+    image: '/stack-test.png',
+  },
 };
 
 export default function RootLayout({

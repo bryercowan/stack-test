@@ -28,7 +28,7 @@ export default function StackTestGroup() {
      <header  className="bg-sky-600 text-white"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(28, 169, 232, 1) 30%, rgba(28, 169, 232, 0) 70%), url('/smoke-stack-flipped.webp')",
+            "linear-gradient(to right, rgba(28, 169, 232, 1) 30%, rgba(28, 169, 232, 0) 70%), url('/smoke-stack-real-flipped.jpg')",
           backgroundSize: '100% 100%',
           backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
