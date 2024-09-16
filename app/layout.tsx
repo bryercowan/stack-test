@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   title: 'Expert Stack Testing Services | Stack Test Group',
   description: 'Leading provider of stack testing services for industrial facilities. Over 50 years of experience in emissions compliance and performance optimization.',
   keywords: 'stack testing, emissions testing, environmental compliance, air quality, combustion testing, permit compliance, air toxic studies, emissions optimization',
-  author: 'Stack Test Group',
   openGraph: {
     title: 'Expert Stack Testing Services',
     description: 'We provide emissions testing and compliance services for industrial facilities.',
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     ],
   },
 icons: {
-		icon: '/blue-stack-test.png'
+	icon: '/blue-stack-test.png'
 	},
 };
 
