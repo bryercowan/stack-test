@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import Image from 'next/image';
 import { Input } from "@/components/ui/input"
@@ -22,6 +24,17 @@ export default function StackTestGroup() {
     	icon: <CheckCircleIcon className="w-16 h-16 mb-4 text-sky-600" />
     }
   ]
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+
+    const mailtoLink = `mailto:chasityc@stacktestllc.com?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${name}%0AEmail: ${email}`;
+    window.location.href = mailtoLink;
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-sky-50">
@@ -93,20 +106,24 @@ export default function StackTestGroup() {
                   </li>
                   <li className="flex items-center">
                     <Mail className="mr-2 h-5 w-5" />
-                    <span>contact@stacktestllc.com</span>
+                    <span>admin@stacktestllc.com</span>
                   </li>
                   <li className="flex items-center">
                     <MapPin className="mr-2 h-5 w-5" />
                     <span>1500 Boyce Memorial Drive Ottawa, IL 61350</span>
                   </li>
+                  <li className="flex items-center">
+                    <MapPin className="mr-2 h-5 w-5" />
+                    <span>22233 30th Ave Centerville, IA 52544</span>
+                  </li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-sky-700">Send Us a Message</h3>
-                <form className="space-y-4">
-                  <Input placeholder="Your Name" className="bg-white" />
-                  <Input type="email" placeholder="Your Email" className="bg-white" />
-                  <Textarea placeholder="Your Message" className="bg-white" />
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  <Input name="name" placeholder="Your Name" className="bg-white text-black" />
+                  <Input name="email" type="email" placeholder="Your Email" className="bg-white text-black" />
+                  <Textarea name="message" placeholder="Your Message" className="bg-white text-black" />
                   <Button type="submit" className="bg-sky-600 text-white hover:bg-sky-700">Send Message</Button>
                 </form>
               </div>
