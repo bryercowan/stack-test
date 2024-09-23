@@ -20,18 +20,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Expert Stack Testing Services',
     description: 'We provide emissions testing and compliance services for industrial facilities.',
-    url: 'https://www.yoursite.com',
+    url: 'https://www.stacktestllc.com',
     type: 'website',
     images: [
       {
-        url: '/stack-test.png',
+        url: '/stack-test-blue.png',
         alt: 'Stack Test Group Logo',
       },
     ],
   },
-icons: {
-	icon: '/blue-stack-test.png'
-	},
 };
 
 export default function RootLayout({
