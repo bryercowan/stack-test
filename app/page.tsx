@@ -73,7 +73,9 @@ export default function StackTestGroup() {
         <header className="bg-sky-600 text-white"
                 style={{
                   backgroundImage:
-                      "linear-gradient(to right, rgba(28, 169, 232, 1) 30%, rgba(28, 169, 232, 0) 70%), url('/new_stack.png')",
+                      "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), " +
+                      "linear-gradient(to right, rgba(28, 169, 232, .5) 30%, rgba(28, 169, 232, 0) 70%), " +
+                      "url('/new_stack.png')",
                   backgroundSize: '100% 100%',
                   backgroundPosition: 'right center',
                   backgroundRepeat: 'no-repeat',
