@@ -6,7 +6,50 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { CheckCircleIcon, ShieldCheckIcon, FireIcon } from "@heroicons/react/16/solid";
+import {useRef, useState} from "react";
 export default function StackTestGroup() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      console.log({response});
+
+      if (response.status == 200) {
+        setSubmitMessage('Message sent successfully, we will get back to you soon!');
+        // Clear the form
+        if (formRef.current) {
+          formRef.current.reset();
+        }
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.log({error});
+      setSubmitMessage('An error occurred. Please try again later.');
+      console.error('Error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const services = [
     {
       name: "Compliance Testing",
@@ -25,23 +68,12 @@ export default function StackTestGroup() {
     }
   ]
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const message = formData.get('message') as string;
-
-    const mailtoLink = `mailto:chasityc@stacktestllc.com?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${name}%0AEmail: ${email}`;
-    window.location.href = mailtoLink;
-  };
-
   return (
     <div className="flex flex-col min-h-screen bg-sky-50">
      <header  className="bg-sky-600 text-white"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(28, 169, 232, 1) 30%, rgba(28, 169, 232, 0) 70%), url('/smoke-stack-real-flipped.jpg')",
+            "linear-gradient(to right, rgba(28, 169, 232, 1) 30%, rgba(28, 169, 232, 0) 70%), url('/new_stack.png')",
           backgroundSize: '100% 100%',
           backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
@@ -106,7 +138,7 @@ export default function StackTestGroup() {
                   </li>
                   <li className="flex items-center">
                     <Mail className="mr-2 h-5 w-5" />
-                    <span>admin@stacktestllc.com</span>
+                    <span>contact@stacktestllc.com</span>
                   </li>
                   <li className="flex items-center">
                     <MapPin className="mr-2 h-5 w-5" />
@@ -120,11 +152,15 @@ export default function StackTestGroup() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-sky-700">Send Us a Message</h3>
-                <form className="space-y-4" onSubmit={handleSubmit}>
-                  <Input name="name" placeholder="Your Name" className="bg-white text-black" />
-                  <Input name="email" type="email" placeholder="Your Email" className="bg-white text-black" />
-                  <Textarea name="message" placeholder="Your Message" className="bg-white text-black" />
-                  <Button type="submit" className="bg-sky-600 text-white hover:bg-sky-700">Send Message</Button>
+                <form ref={formRef} className="space-y-4" onSubmit={handleSubmit}>
+                  <Input name="name" placeholder="Your Name" className="bg-white text-black" required/>
+                  <Input name="email" type="email" placeholder="Your Email" className="bg-white text-black" required/>
+                  <Textarea name="message" placeholder="Your Message" className="bg-white text-black" required/>
+                  <Button type="submit" className="bg-sky-600 text-white hover:bg-sky-700" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                  {submitMessage &&
+                      <p className={submitMessage.includes('successfully') ? 'text-green-600' : 'text-red-600'}>{submitMessage}</p>}
                 </form>
               </div>
             </div>
