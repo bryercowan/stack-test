@@ -81,7 +81,7 @@ export default function StackTestGroup() {
         }}>
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
-            <Image src="/stack-test.png" alt="Stack Test" width={80} height={100} />
+            <Image src="/stack-test-white.png" alt="Stack Test" width={80} height={100} />
             <ul className="flex space-x-4">
               <li><a href="#about" className="hover:underline">About</a></li>
               <li><a href="#services" className="hover:underline">Services</a></li>
