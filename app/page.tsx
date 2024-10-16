@@ -155,7 +155,7 @@ export default function StackTestGroup() {
                     </li>
                     <li className="flex items-center">
                       <MapPin className="mr-4 h-6 w-6"/>
-                      <span>22233 30th Ave Centerville, IA 52544</span>
+                      <span>22233 230th Ave Centerville, IA 52544</span>
                     </li>
                   </ul>
                 </div>
