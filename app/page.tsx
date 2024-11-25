@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone } from "lucide-react"
-import { CheckCircleIcon, ShieldCheckIcon, FireIcon } from "@heroicons/react/16/solid";
+import { CheckCircleIcon, ShieldCheckIcon, FireIcon, ChartBarIcon, DocumentCheckIcon, CogIcon, UserGroupIcon } from "@heroicons/react/16/solid";
 import {useRef, useState} from "react";
 export default function StackTestGroup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,22 +51,37 @@ export default function StackTestGroup() {
     }
   };
   const services = [
-    {
-      name: "Compliance Testing",
-      description: "Air Compliance testing to ensure compliance with enviornmental regulations like MACT and permit conditions, covering emissions sampling and visible opacity",
-    icon: <ShieldCheckIcon className="w-16 h-16 mb-4 text-sky-600" />
-	},
-    {
-      name: "Combustion/Control Device Optimization",
-      description: "Optimization for combustion systems, including ammonia slip evaluations, boiler testing, and efficiency determinations for various pollution control devices like scrubbers and electrostatic precipitators", 
-    	icon: <FireIcon className="w-16 h-16 mb-4 text-sky-600" />
-    },
-    {
-      name: "Emissions Studies and Specialized Testing",
-      description: "Advanced emissions studies, such as air toxic studies, particle size distribution, and testing for reactive volatile organic compounds, using technologies like FTIR",
-    	icon: <CheckCircleIcon className="w-16 h-16 mb-4 text-sky-600" />
-    }
-  ]
+  {
+    name: "Compliance Testing",
+    description: "We provide Air Compliance testing to ensure compliance with all environmental regulations and permit conditions.",
+    icon: <ShieldCheckIcon className="w-16 h-16 mb-4 text-sky-600" />,
+  },
+  {
+    name: "Combustion/Control Device Optimization",
+    description: "We work with our clients to improve the performance of combustion systems, reduce emissions, and lower operating costs.",
+    icon: <FireIcon className="w-16 h-16 mb-4 text-sky-600" />,
+  },
+  {
+    name: "Emissions Studies and Specialized Testing",
+    description: "We provide a wide range of advanced emissions studies with a high degree of accuracy and sensitivity, enabling critical process adjustments.",
+    icon: <ChartBarIcon className="w-16 h-16 mb-4 text-sky-600" />,
+  },
+  {
+    name: "Continuous Emission Monitoring System Certification",
+    description: "We ensure your equipment is certified to measure emissions accurately and reliably using all EPA performance specifications.",
+    icon: <DocumentCheckIcon className="w-16 h-16 mb-4 text-sky-600" />,
+  },
+  {
+    name: "Destruction / Capture Efficiency Studies",
+    description: "We evaluate processes to determine pollutant removal or destruction efficiency, including volatile organic compounds and hazardous air pollutants.",
+    icon: <CogIcon className="w-16 h-16 mb-4 text-sky-600" />,
+  },
+  {
+    name: "Expert Support",
+    description: "Our experienced team provides guidance on local, state, and federal regulations, ensuring knowledgeable support for your projects.",
+    icon: <UserGroupIcon className="w-16 h-16 mb-4 text-sky-600" />,
+  },
+];
 
   return (
       <div className="flex flex-col min-h-screen bg-sky-50">
@@ -92,10 +107,8 @@ export default function StackTestGroup() {
             </nav>
           </div>
           <div className="container mx-auto text-center relative z-10 mt-16 md:mt-24">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Expert Stack Testing
-              Services</h2>
-            <p className="text-xl md:text-2xl">Ensuring compliance and optimizing performance for your industrial
-              stacks</p>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">Air Compliance &amp; Emissions Solutions for a Better Tomorrow</h2>
+            <p className="text-xl md:text-2xl">Ensuring compliance and optimizing performance for your business.</p>
           </div>
         </header>
 
@@ -105,14 +118,11 @@ export default function StackTestGroup() {
               <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center text-sky-800">About Stack Test Group</h2>
               <div className="text-center text-sky-700 text-lg md:text-xl">
                 <p className="mb-6">
-                  Stack Test Group is a leading provider of stack testing services for industrial facilities. With over
-                  50 years of experience and a team of certified professionals, we deliver accurate and reliable
-                  emissions testing to ensure your compliance with environmental regulations.
+                  Stack Test Group is a leading providers of stack testing services for industrial facilities and has been in the business for over 30 years. We have a team of certified professionals that deliver accurate and reliable emissions testing to ensure your compliance with environmental regulations.
                 </p>
                 <p>
-                  Our state-of-the-art equipment and rigorous testing procedures help you optimize your processes,
-                  reduce emissions, and maintain regulatory compliance.
-                </p>
+                 Our state of the art equipment and rigorous testing procedures help you optimize your processes, reduce emissions, and maintain regulatory compliance.               
+		</p>
               </div>
             </div>
           </section>
@@ -133,8 +143,22 @@ export default function StackTestGroup() {
               </div>
             </div>
           </section>
-
-          <section id="contact" className="py-20 md:py-32 bg-sky-100">
+		
+	<section id="mission-vision" className="py-20 md:py-32 bg-white">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center text-sky-800">Our Mission & Vision</h2>
+    <div className="text-center text-sky-700 text-lg md:text-xl">
+      <p className="mb-6">
+        At Stack Test Group, we are dedicated to ensuring clean air quality and helping industries stay compliant with environmental regulations. Our mission is to deliver superior technical expertise in air compliance and emissions solutions.
+      </p>
+      <p>
+        Guided by our vision for a sustainable future, we implement eco-friendly practices to reduce carbon footprints, promote health, and support an environmentally conscious global economy.
+      </p>
+    </div>
+  </div>
+</section>
+          
+	<section id="contact" className="py-20 md:py-32 bg-sky-100">
             <div className="container mx-auto px-4 max-w-6xl">
               <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center text-sky-800">Contact Us</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
