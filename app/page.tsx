@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone } from "lucide-react"
-import { CheckCircleIcon, ShieldCheckIcon, FireIcon, ChartBarIcon, DocumentCheckIcon, CogIcon, UserGroupIcon } from "@heroicons/react/16/solid";
+import { ShieldCheckIcon, FireIcon, ChartBarIcon, DocumentCheckIcon, CogIcon, UserGroupIcon } from "@heroicons/react/16/solid";
 import {useRef, useState} from "react";
 export default function StackTestGroup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
